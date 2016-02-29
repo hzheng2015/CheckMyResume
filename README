@@ -1,1 +1,13 @@
-This is a README file of the codes written for the CheckMyResume Insight project. Details to come.
+This is a README file of the codes written for the CheckMyResume project. I built this app in three weeks while I was an Insight Data Science Fellow. It can be used either by jobseekers to check the professional content of their resumes in order to make them stand our or by recruiters to find good candidates.
+
+Algorithm:
+Publically available resumes are scrapped from Indeed and parsed using beautifulsoup and re. Text cleaning and mining is done through a Natural Language Processing pipeline consisting of tokenization, stemming, part-of-speech tagging and tf-idf transformation. Then, each resume is mapped to the latent topic vector space by Latent Sementic Indexing in the gensim package. The topic weights are used to build a random-forest classifier. Any unseen resume can be processed and input into the trained classifier to produce the matching degree of the resume to jobs. In addition, the algorithm also outputs the matching and missing keywords (which can be another take-away for the users).
+
+Data:
+Training is done using 2816 resumes from Indeed.
+
+Backend:
+Python, pandas, numpy, scikit-learn,gensim, and NLTK.
+
+Frontend:
+Flask, Bootstrap, deployed on AWS.
